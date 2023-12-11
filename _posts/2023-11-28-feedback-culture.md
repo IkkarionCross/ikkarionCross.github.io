@@ -55,32 +55,32 @@ Context is the most important part of the feedback and its the sum of the period
 
 ## Feedback context
 
-Feedback withou a context is not feedback, is gossip!
+Now that we have a good understanding of how feedback works, let's talk about the most important part of the feedback: `context`. Whenever you ask or receive a feedback, it must have a context. But what I mean about that? Feedback has to have a period for refence, it needs some story associate with that period, people who worked together in that period.
 
-Now that we have a good understanding of how feedback works, let's talk about the most important part of the feedback: `context`. Whenever you ask or receive a feedback, it must has a context. But what I mean about that? Feedback has to have a period for refence, it needs some story associate with it for you know in which circustances the feedback occurred.
+Does any of that questions remember something? If you worked with any agile methotolody those questions are part of you. Let's compare feedback with agile methodology Scrum. In scrum you have a sprint which is a period to deliver something, a sprint can 2 two to 4 weeks, after that period you have the review and the retrospective. Both meetings are feedback meetings where the team can address things that were bad and continue doing things that worked. Of course, there are differences between review (more business focused) and retrospective (more team focused), but for simplicity I will not enter into that. The structure of the feedback context is something like that:
 
-Let`s compare feedback with agile methodology Scrum. In scrum you have a sprint which is a period to deliver somethings, a sprint can 2 two to 4 weeks long, after that period you have the review and the retrospective. Both meetings are feedback meetings where the team can address things that were bad and continue doing things that worked. Of course, there are differences between review (more business focused) and retrospective (more team focused), but for simplicity I will not enter in that. Basically, If you have worked with any agile or prototype methodology you would always have some kind of loop which is as follows: 
+<<<<<<<<Period>>>>>>>>
+Plan -> Act -> Review
+^                   |
+|                   |
+|                   |
+|___________________|
 
-<<<<<<<<<<<<<<<<SPRINT>>>>>>>>>>>>>>>>
-Plan -> Act -> Review -> Retrospective
-^                           |
-|                           |
-|                           |
-|___________________________|
+If we look at this process what is the context? We `plan`, so there is something that we need to do to improve, there is a period of time, there is what was improved or delivered in the period and finally there is what happens during the period. The difference between an agile process and a feedback process is this: we are trying to improve ourselves and not a product. 
 
-If we look at this process what is the context? We plan, so there is a project that is part of the context, there is a period of two weeks, there is what was develivered in the period and finally there is what happens during the period. When giving feedback is very important to bring context to the conversation try to always remember when the event happend, how it happend and which moment the team was when the event happend. In this way you can give the best feedback possible, because you give all information needed for people to improve themselves.
+When giving feedback is very important to bring context to the conversation, try to always remember when the event happend, how it happend and in which moment the team was. In this way you can give the best feedback possible, because you give all information needed for people to improve themselves. Of course we are humans and sometimes we can forget something, that's normal. You do not need to keep track to every litle thing, but you need to provide the the best context `possible`.
 
-Let`s use a example to make things more clear:
+Let's make use of a example to make things more clear:
 
 Joey and Ross are team members. One day Ross was reviewing a Pull Request from Joey and wrote the comment:
 
 "This unit test sucks! You should rewrite it"
 
-This message is not telling anything at all. It`s just a curse, nothing else. A more beautiful and meaning message would be: 
+This message is not telling anything at all. It's just full of anger and it's offensive, nothing else. A more beautiful and meaning message would be: 
 
-"Your unit test is not testing the class (unit), but the entire system. Also it violates our testing guidelines. Use this link as reference https://mytestdoc.company.com"
+"Your unit test is not testing the class (unit), but the entire system. Also it violates our testing guidelines. Use this link mytestdoc.company.com as reference to improve this code."
 
-This is a much better message, because context was given. The person that reading it will know exactaly where it needs to improve. 
+This is a much better message, because context was given. The person reading it will know exactaly where it needs to improve: reading the documentation before implementation, study more about unit test.
 
 Another example:
 
@@ -102,6 +102,6 @@ Ross, every time we have a dicussion you bring that to our manager. You could ha
 
 This is a better feedback message, now we have a full context. The period, the story, the people involved and moment of the project. With this message the person that receives it can search for a way to improve and be better.
 
-Give or receive, feedback is a difficult thing. You have to listen more than you talk, you have to know the full picture, you have to stay calm during the process and be empathetic. Just remember that feedback is a good thing, is a present that someone is giving: `a chance to better`. But feedback without context has little value, so always pay attention to the context. Feedback is a continuos process, like any agile methodology is a process of contignous improvement, this means that you need to do it many times until you find your on way. 
+Give or receive, feedback is a difficult thing. You have to listen more than you talk, you have to know the full picture, you have to stay calm during the process and be empathetic. Just remember that feedback is a good thing, is a present that someone is giving: `a chance to better`. But feedback without context has little value, so always pay attention to the context. Feedback is a continuos process, like any agile methodology is a process of contignous improvement, this means that you need to do it many times until you find your on way.
 
 # About Feedback
