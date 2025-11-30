@@ -16,7 +16,7 @@ timezone:
 
 title: Tech with Amaro # the main title
 
-tagline: Technology, life, knowledge # it will display as the sub-title
+tagline: Life, Technology, knowledge # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A blog to share knowledge
@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
 url: ""
 
 github:
-  username: github_username # change to your github username
+  username: ikkarionCross # change to your github username
 
 # twitter:
 #   username: twitter_username # change to your twitter username
@@ -34,14 +34,9 @@ github:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: Victor da cRuz Amaro
   links:
-    # The first element serves as the copyright owner's link
-    # - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/username # change to your github homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
+    - https://github.com/ikkarionCross
     - https://www.linkedin.com/in/victor-amaro-cruz/
 
 google_site_verification: # fill in to your verification string
@@ -73,7 +68,7 @@ theme_mode: dark # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: /assets/img/avatar/profile.png
 
 # boolean type, the global switch for TOC in posts.
 toc: true
