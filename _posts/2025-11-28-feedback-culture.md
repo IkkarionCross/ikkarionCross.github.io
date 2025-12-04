@@ -1,6 +1,6 @@
 ---
 title: Feedback Culture
-date: 2023-11-28
+date: 2025-12-04
 categories: [softskill, feedback]
 tags: [softskill]     # TAG names should always be lowercase
 ---
@@ -29,9 +29,7 @@ Sometimes, feedback without context is just a reflection of a stressful situatio
 
 No one expects you to ask for feedback every two weeks. Most companies have formal performance reviews, where your manager shares feedback with you. But what about your colleagues — the people who work with you every day, even when your manager isn’t around? Their feedback is often the most valuable.
 
-Companies usually have systems for peer feedback, but those tend to be anonymous, simple, and quantitative — star ratings, short sentences, or quick evaluations of “fit.” That’s useful for business metrics, but not for personal growth. These systems often lack depth and context.
-
-Every team member should seek feedback from peers they’ve worked closely with during the review period. That’s how you understand how others perceive your work and collaboration. If multiple people point out the same thing — for example, three teammates say you should improve your understanding of SOLID principles — that’s a clear signal. You can act on it by studying those concepts or practicing cleaner, simpler design patterns.
+Every team member should seek feedback from peers they’ve worked closely with during the review period or outside it. That’s how you understand how others perceive your work and collaboration. If multiple people point out the same thing — for example, three teammates say you should improve your understanding of SOLID principles — that’s a clear signal. You can act on it by studying those concepts or practicing cleaner, simpler design patterns.
 
 Consistent feedback sessions also build trust. As people grow more comfortable with you, they’ll share not just feedback about you, but also insights about the team and how things could improve. That’s incredibly valuable.
 
@@ -43,25 +41,23 @@ There’s nothing wrong with clarifying that a feedback point was based on a mis
 “When did that happen? In which meeting? What was the project’s state at that time?”
 Just be careful not to sound defensive or irritated. That kind of reaction will push your colleagues away.
 
-If you’re a manager, feedback goes both ways. Don’t just give it — ask for it often. Receiving feedback as a leader builds stronger relationships and trust. Handling negative feedback with grace doesn’t just help you improve; it shows your team that you’re a grounded, empathetic leader.
+If you’re a manager, feedback goes both ways. Don’t just give it — ask for it often. Receiving feedback as a leader builds stronger relationships and trust. Handling negative feedback with grace doesn’t just help you improve; it shows your team that you’re a grounded, empathetic leader and someone that they can see as a reference.
 
 Managers should also investigate feedback. For example, if someone says “Joey was rude to Ross,” dig deeper. What caused it? Was there stress over a deadline? Did something happen in the team recently? Was there tension between them? Before making judgments, ask questions and understand the full context.
 
 If it was a one-time reaction caused by stress, guide Joey on how to manage that better — not punish him. But if it’s recurring behavior, a tougher conversation and closer observation may be necessary. Observation helps leaders maintain a healthy feedback system and keep track of who’s thriving and who’s struggling.
 
-The Importance of Context
-
-(with examples of positive feedback)
+## The Importance of Context
 
 Now that we understand the importance of feedback, let’s talk about its most essential ingredient: context.
 
 Whenever you give or receive feedback, it must have context. That means:
 
-A specific time period.
+- A specific time period.
 
-A clear story or situation.
+- A clear story or situation.
 
-The people involved.
+- The people involved.
 
 If you’ve worked in an agile environment, this might sound familiar. In Scrum, each sprint has a plan, an execution period, and a retrospective — a built-in feedback loop. Feedback works the same way:
 
@@ -72,7 +68,7 @@ Plan -> Act -> Review
 |___________________|
 
 
-The key difference is that, in feedback, you are the product being improved.
+The key difference is that, in feedback, **you are the product being improved**.
 
 When giving feedback, always bring context to the table: when it happened, how it happened, and what was going on around it. You don’t need to remember every tiny detail — just enough to make it meaningful and actionable.
 
@@ -96,7 +92,7 @@ When giving feedback, always bring context to the table: when it happened, how i
 
 “Joey, during last week’s planning meeting, when we were discussing whether to use Realm or Core Data, I felt disrespected when you called my idea ‘pointless’ before I could finish explaining it. I’d appreciate it if next time you let me finish before giving your opinion. I think you’d feel the same way if I dismissed your ideas too quickly.”
 
-This version shows empathy, describes the event clearly, and suggests improvement.
+> This version shows empathy, describes the event clearly, and suggests improvement. But it`s not needed to provide suggestions, the person who received the feedback can suggest ways to improve the releationship between you.
 
 
 ### Example 3 – Exaggerated Feedback
@@ -109,7 +105,7 @@ This version shows empathy, describes the event clearly, and suggests improvemen
 
 “Ross, in our recent discussions, I noticed you often bring issues directly to our manager instead of resolving them between us. I’d prefer if we tried to talk things out first before escalating.”
 
-Here, the exaggeration (“always”) is replaced with specific, constructive language.
+> Here, the exaggeration (“always”) is replaced with specific, constructive language.
 
 ## Final Thoughts
 
@@ -117,4 +113,4 @@ Giving and receiving feedback is never easy. It requires patience, empathy, and 
 
 But remember: feedback is a gift — an opportunity to grow. Without context, it loses its value. With it, feedback becomes one of the most powerful tools for continuous improvement — both personally and professionally.
 
-Just like agile development, feedback is a continuous process. You refine, iterate, and improve — again and again — until you find your own rhythm.
+Just like agile development, feedback is a continuous process. You refine, iterate, and improve — again and again — until you find your own way.
