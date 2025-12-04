@@ -61,12 +61,14 @@ Whenever you give or receive feedback, it must have context. That means:
 
 If you’ve worked in an agile environment, this might sound familiar. In Scrum, each sprint has a plan, an execution period, and a retrospective — a built-in feedback loop. Feedback works the same way:
 
-<<<<<<<<Period>>>>>>>>
+```
+<<<<<<<<Period>>>>>>>
 Plan -> Act -> Review
 ^                   |
 |                   |
 |___________________|
 
+```
 
 The key difference is that, in feedback, **you are the product being improved**.
 
@@ -85,6 +87,7 @@ When giving feedback, always bring context to the table: when it happened, how i
 ### Example 2 – Behavior Feedback
 
 ❌ Bad feedback:
+
 
 “Joey, you were rude to me during the planning meeting last week.”
 
