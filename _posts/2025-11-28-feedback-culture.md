@@ -2,7 +2,7 @@
 title: Feedback Culture
 date: 2025-12-04
 categories: [softskill, feedback]
-tags: [softskill]     # TAG names should always be lowercase
+tags: [softskill]
 ---
 
 # Feedback Culture

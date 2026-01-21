@@ -1,3 +1,10 @@
+---
+title: A thread Safe Dictionary
+date: 2025-12-04
+categories: [tech, programming, swift]
+tags: [softskill, ios, swift, concurrency]
+---
+
 # Thread Safe Dictionary
 
 # Introduction
