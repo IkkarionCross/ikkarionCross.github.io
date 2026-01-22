@@ -182,20 +182,21 @@ var body: some View {
 
 ![Shader stars](../assets/img/posts/timelineview/shader_stars.gif)
 
-Litle code and best performance:
+### Litle code and best performance
 
-CPU Profiling:
+**CPU Profiling:**
+
 ![CPU Shader](../assets/img/posts/timelineview/shader_cpu.png)
 
-SwiftUI Profiling:
+**SwiftUI Profiling:**
 
 ![SwiftU Profiling Shader](../assets/img/posts/timelineview/shader_swiftui_profiling.png)
 
-Metal Profiling:
+**Metal Profiling:**
 
 ![Metal Profiling Shader](../assets/img/posts/timelineview/shader_metal_profiling.png)
 
-# Conslusion
+# Conclusion
 
 Effects in SwiftUI are prety easy to create with that many options. As time passes SwiftUI is more and more become easier than UIKit.
 
