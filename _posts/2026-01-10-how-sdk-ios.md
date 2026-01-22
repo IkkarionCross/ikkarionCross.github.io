@@ -51,8 +51,7 @@ The SDK’s structure was based on three main events:
 
 This structure allowed us to add new events or parameters later without breaking existing implementations. 
 
-```Swift
-
+~~~swift 
 public class AuthSDKAuthorizationCodeFlow {
     static func startAuthorization(
         requestURI,
@@ -62,7 +61,6 @@ public class AuthSDKAuthorizationCodeFlow {
     )
 }
 
-// Usage
 
 AuthSDKAuthorizationCodeFlow.startAuthorization(requestURI) { code in
 
@@ -72,7 +70,7 @@ AuthSDKAuthorizationCodeFlow.startAuthorization(requestURI) { code in
 
 }
 
-```
+~~~
 
 The SDK supported multiple authentication flows, each handled by a separate class.
 
@@ -100,8 +98,7 @@ Debugging and finding errors can be a source of much problem in an SDK. For an s
 
 These discussions can get complex quickly, so I started with one simple goal: **define a clear error API**.
 
-```Swift
-
+~~~swift 
 public protocol AuthSDKError: Error, LocalizedERror {
     var code: String { get }   
     var flowId: String { get }
@@ -109,7 +106,7 @@ public protocol AuthSDKError: Error, LocalizedERror {
     var sdkVersion: { get }
 }
 
-```
+~~~
 
 This protocol defines only what’s necessary to identify an error:
 
@@ -123,15 +120,14 @@ This protocol defines only what’s necessary to identify an error:
 
 Each SDK domain defines its own errors in enums conforming to AuthSDKError:
 
-```Swift
-
+~~~swift
 public enum AuthError: AuthSDKError {
 
     case emptyRequestURI
 
 }
 
-```
+~~~
 
 These errors are returned to partners so they can debug issues or open a ticket when needed.
 

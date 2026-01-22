@@ -60,7 +60,7 @@ In the above code we are doing exactaly that, we are starting multiple threads a
 
 If the code is breaking because of two threads are trying to access the same resource at the same time, what can we do to solve it? Well, we could make the threads access the resource one thread at a time. This is called serializing access.
 
-~~~Swift 
+~~~swift 
 
 class NotThreadSafeKeyValueStore {
     
@@ -95,7 +95,7 @@ Remenber that thread problems comes from writing and reading. In the above code 
 
 Besides that we need to synchronize the reading to. This will enable our reading to be thread safe also.
 
-~~~Swift 
+~~~swift 
 
 class NotThreadSafeKeyValueStore {
     
@@ -132,7 +132,7 @@ It's still doesn't work. That's because our printAll method is accessing the dic
 
 Swift Concurrency introduced a bunch of new keywords and more safety to the language. It adds a layer over threading that gives all programmers more security and confidence when wrinting concurrent code. Let`s re-write our example.
 
-~~~Swift 
+~~~swift 
 final class NotThreadSafeKeyValueStore {
     
     @MainActor
@@ -162,7 +162,7 @@ The first thing we can do is isolate our code to a global actor. That is, whenev
 A more elagant solution is o use the new **actor** object. It`s the same of class and struct, but actors deals with the synchronization for us by serializing the wrinting and synchronizing the reading.
 
 
-~~~Swift 
+~~~swift 
 final actor NotThreadSafeKeyValueStore {
     
     private var dict: [String: String] = [:]
@@ -190,7 +190,7 @@ final actor NotThreadSafeKeyValueStore {
 We also can use a lock. A lock is a simple structure exactly like a semaphore, it will stop the traffic (a therad) while giving permission to another thread to access the protected resource.
 
 
-~~~Swift 
+~~~swift 
 
 class NotThreadSafeKeyValueStore {
     
