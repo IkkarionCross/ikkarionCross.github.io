@@ -198,3 +198,5 @@ Metal Profiling:
 # Conslusion
 
 Effects in SwiftUI are prety easy to create with that many options. As time passes SwiftUI is more and more become easier than UIKit.
+
+Full project at [github.](https://github.com/IkkarionCross/ios-samples/blob/main/Samples/TwinkleTwinkleStars/README.md)
