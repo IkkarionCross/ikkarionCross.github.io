@@ -1,5 +1,5 @@
 ---
-title: Feedback Culture
+title: Uma Cultura de Feedback
 date: 2025-12-04
 lang: pt-BR
 categories: [softskill, feedback]

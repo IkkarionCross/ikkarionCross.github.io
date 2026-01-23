@@ -1,6 +1,7 @@
 ---
 title: Surgical Change
 date: 2026-01-20
+lang: en
 categories: [engineering, tech, process]
 tags: [softskill, process]
 ---
