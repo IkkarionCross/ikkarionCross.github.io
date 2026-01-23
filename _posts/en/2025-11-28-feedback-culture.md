@@ -1,6 +1,7 @@
 ---
 title: Feedback Culture
 date: 2025-12-04
+lang: en
 categories: [softskill, feedback]
 tags: [softskill]
 ---
