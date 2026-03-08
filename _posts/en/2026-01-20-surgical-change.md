@@ -10,7 +10,7 @@ tags: [softskill, process]
 
 There are situations where a small, seemingly harmless change can have a disproportionate impact on many people’s lives.
 
-When, as developers, we start building systems that help in the diagnosis of health problems, control the injection of medicine into the body of someone, or manage the flight of 300 people, the consequences of our changes matter. We do not see the impact of our changes... That tiny refactor you made can potentially introduce a bug that drastically affects someone’s life.
+When, as developers, we start building systems that help in the diagnosis of health problems, control the injection of medicine into the body of someone, or manage the flight of 300 people, the consequences of our changes matter. We do not see the impact of our changes... That tiny refactor you made can potentially introduce a bug that drastically affects someone’s life. Check [Software bugs that Killed people](https://en.wikipedia.org/wiki/List_of_software_bugs).
 
 In our day to day work we can`t notice any problem beyond a file not following the naming conventions or classes being tightly coupled. The beauty--or uglyness--of the code becomes our highest priority. We spend so much time deciding names and structure, that we miss some very important thing: engineering proccess.
 
@@ -46,6 +46,11 @@ While documenting, you’ll uncover flaws in your thinking and in the code that 
 
 # Surgical Change
 
+>
+> "That is, instead of each member cutting away on the problem, one does the cutting and the others give him every support that will enhance his effectiveness and productivity. "
+>
+> Brooks Jr., Frederick P.. The Mythical Man-Month: Essays on Software Engineering (p. 47).
+
 During refinement I aim for a surgical change: the modification that delivers the most value with the smallest impact on system behavior. Easier said than done, but that`s the goal.
 
 My proccess for identifying that change usually starts after I have get rid of all my doubts about the business. I first ask the product manager clarifying questions, then examine the code.
@@ -64,21 +69,7 @@ The last two steps can be merged into a Test‑Driven Development workflow. Thes
 Software engineering is not an easy task. Developers write code and documentation every day; both need attention to prevent mistakes that can cause serious bugs. A repeatable process—a reliable way of working—helps prevent oversights and builds productive habits.
 
 
-
 References: 
 
-uncle bob talk that he says the rules are given to programmers.
+[Expecting professionalism](https://www.youtube.com/watch?v=HD0L3lQ9cms&pp=ugMICgJwdBABGAHKBQ51bmNsZSBib2IgdGFsaw%3D%3D)
 
-Expecting professionalism
-
-https://www.youtube.com/watch?v=HD0L3lQ9cms&pp=ugMICgJwdBABGAHKBQ51bmNsZSBib2IgdGFsaw%3D%3D
-
-Brooks, mythical man-month -> surgical team
-    "
-    That is, instead of each member cutting away on the problem, one does the cutting and the others give him every support that will enhance his effectiveness and productivity. "
-
-    Brooks Jr., Frederick P.. The Mythical Man-Month: Essays on Software Engineering (p. 47). (Function). Kindle Edition. 
-
-Wikipedia list of bugs that killed people
-
-https://en.wikipedia.org/wiki/List_of_software_bugs
