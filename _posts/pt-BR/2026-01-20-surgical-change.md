@@ -10,7 +10,7 @@ tags: [softskill, process]
 
 Existem situações em que uma mudança pequena, aparentemente inofensiva, pode ter um impacto desproporcional na vida de muitas pessoas.
 
-Quando nós, como desenvolvedores, começamos a construir sistemas que ajudam no diagnóstico de problemas de saúde, controlam a injeção de medicamentos no corpo de alguém ou gerenciam o voo de 300 pessoas, as consequências das nossas mudanças importam. Não enxergamos sempre o impacto das nossas alterações... Aquele pequeno refactor que você fez pode potencialmente introduzir um bug que afete drasticamente a vida de alguém.
+Quando nós, como desenvolvedores, começamos a construir sistemas que ajudam no diagnóstico de problemas de saúde, controlam a injeção de medicamentos no corpo de alguém ou gerenciam o voo de 300 pessoas, as consequências das nossas mudanças importam. Não enxergamos sempre o impacto das nossas alterações... Aquele pequeno refactor que você fez pode potencialmente introduzir um bug que afete drasticamente a vida de alguém. Dê uma olhada [Lista de erros de sistemas que mataram pessoas](https://en.wikipedia.org/wiki/List_of_software_bugs).
 
 No dia a dia do trabalho, muitas vezes não percebemos além de um arquivo que não segue convenções de nomenclatura ou classes fortemente acopladas. A beleza — ou feiura — do código torna-se nossa prioridade máxima. Gastamos tanto tempo decidindo nomes e estrutura que perdemos algo muito importante: o processo de engenharia.
 Para quem estou fazendo isso — para mim, para o cliente da empresa ou para a empresa?
@@ -43,6 +43,11 @@ Enquanto documenta, você descobrirá falhas no seu raciocínio e no código que
 
 # Mudança Cirúrgica
 
+>
+> "That is, instead of each member cutting away on the problem, one does the cutting and the others give him every support that will enhance his effectiveness and productivity. "
+>
+> Brooks Jr., Frederick P.. The Mythical Man-Month: Essays on Software Engineering (p. 47).
+
 Durante o refinamento, procuro uma mudança cirúrgica: a modificação que entrega mais valor com o menor impacto no comportamento do sistema. Mais fácil falar do que fazer, eu sei, mas esse é o objetivo.
 
 Meu processo para identificar essa mudança geralmente começa depois que elimino todas as dúvidas sobre o negócio. Primeiro faço perguntas de esclarecimento ao product manager e então examino o código.
@@ -57,22 +62,6 @@ Os dois últimos passos podem ser mesclados em um fluxo de trabalho de Test‑Dr
 
 Engenharia de software não é uma tarefa fácil. Desenvolvedores escrevem código e documentação todo dia; ambos exigem atenção para evitar erros que podem causar bugs graves. Um processo repetível — uma forma confiável de trabalhar — ajuda a prevenir esquecimentos e constrói hábitos produtivos.
 
-
-
 References: 
 
-uncle bob talk that he says the rules are given to programmers.
-
-Expecting professionalism
-
-https://www.youtube.com/watch?v=HD0L3lQ9cms&pp=ugMICgJwdBABGAHKBQ51bmNsZSBib2IgdGFsaw%3D%3D
-
-Brooks, mythical man-month -> surgical team
-    "
-    That is, instead of each member cutting away on the problem, one does the cutting and the others give him every support that will enhance his effectiveness and productivity. "
-
-    Brooks Jr., Frederick P.. The Mythical Man-Month: Essays on Software Engineering (p. 47). (Function). Kindle Edition. 
-
-Wikipedia list of bugs that killed people
-
-https://en.wikipedia.org/wiki/List_of_software_bugs
+[Expecting professionalism](https://www.youtube.com/watch?v=HD0L3lQ9cms&pp=ugMICgJwdBABGAHKBQ51bmNsZSBib2IgdGFsaw%3D%3D)
