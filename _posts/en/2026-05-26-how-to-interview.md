@@ -105,7 +105,91 @@ The model of the challenge is like the one below:
 
 ~~~Swift
 
-// Challenge here
+import UIKit
+
+protocol ImageCacheDelegate {
+    func imageCache(_ cache: ImageCache, didLoad image: UIImage, for url: String)
+    func imageCache(_ cache: ImageCache, didFail url: String, error: Error)
+}
+
+class ImageCache {
+
+    var delegate: ImageCacheDelegate?
+
+    private var store = [String: UIImage]()
+    private var inFlight = Set<String>()
+
+    func image(for url: String) -> UIImage? {
+        return store[url]
+    }
+
+    func load(url: String) {
+        guard !inFlight.contains(url) else { return }
+        inFlight.insert(url)
+
+        guard let requestURL = URL(string: url) else { return }
+
+        URLSession.shared.dataTask(with: requestURL) { data, _, error in
+            self.inFlight.remove(url)
+
+            if let error = error {
+                self.delegate?.imageCache(self, didFail: url, error: error)
+                return
+            }
+
+            guard let data = data, let image = UIImage(data: data) else { return }
+            self.store[url] = image
+            self.delegate?.imageCache(self, didLoad: image, for: url)
+        }.resume()
+    }
+
+    func clearAll() {
+        store.removeAll()
+        inFlight.removeAll()
+    }
+}
+
+class FeedViewController: UIViewController, ImageCacheDelegate {
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
+    private let cache = ImageCache()
+    private var refreshTimer: Timer?
+    var urls: [String] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cache.delegate = self
+        startRefreshTimer()
+    }
+
+    private func startRefreshTimer() {
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+            self.reloadAll()
+        }
+    }
+
+    private func reloadAll() {
+        for url in urls {
+            cache.load(url: url)
+        }
+    }
+
+    func imageCache(_ cache: ImageCache, didLoad image: UIImage, for url: String) {
+        loadingIndicator.stopAnimating()
+        imageView.image = image
+    }
+
+    func imageCache(_ cache: ImageCache, didFail url: String, error: Error) {
+        loadingIndicator.stopAnimating()
+        print("Failed: \(url) — \(error)")
+    }
+
+    deinit {
+        refreshTimer?.invalidate()
+    }
+}
 
 ~~~
 
@@ -115,7 +199,138 @@ Of course, the challenge here is just an example and was AI-generated just to ex
 
 ~~~Swift
 
-// Solution here
+import UIKit
+
+// BUG 1: Protocol not constrained to AnyObject.
+// Without it, `delegate` cannot be declared `weak`, forcing a strong reference.
+// Fix: add AnyObject constraint.
+protocol ImageCacheDelegate: AnyObject {
+    func imageCache(_ cache: ImageCache, didLoad image: UIImage, for url: String)
+    func imageCache(_ cache: ImageCache, didFail url: String, error: Error)
+}
+
+enum ImageCacheError: Error {
+    case invalidURL
+}
+
+class ImageCache {
+
+    // BUG 2: `delegate` is strong.
+    // FeedViewController owns `cache` strongly; `cache.delegate = self` closes a
+    // retain cycle: FeedViewController → cache → delegate → FeedViewController.
+    // deinit is never called, the timer is never invalidated, memory leaks.
+    // Fix: weak + AnyObject constraint above.
+    weak var delegate: ImageCacheDelegate?
+
+    // BUG 3: `store` and `inFlight` are accessed from both the calling thread
+    // (usually main) and URLSession completion handlers (background queue).
+    // This is a data race — undefined behavior under Swift concurrency rules.
+    // Fix: serialise all access through a dedicated queue.
+    private var store = [String: UIImage]()
+    private var inFlight = Set<String>()
+    private let queue = DispatchQueue(label: "com.app.ImageCache", attributes: .concurrent)
+
+    func image(for url: String) -> UIImage? {
+        // Reads can run concurrently, writes need a barrier (see `load` below).
+        return queue.sync { store[url] }
+    }
+
+    func load(url: String) {
+        queue.async(flags: .barrier) {
+            guard !self.inFlight.contains(url) else { return }
+            self.inFlight.insert(url)
+
+            // BUG 4: Invalid URL silently exits, leaving `url` stuck in `inFlight`
+            // forever. Subsequent calls for the same URL are silently dropped.
+            // Fix: remove from inFlight and notify the delegate.
+            guard let requestURL = URL(string: url) else {
+                self.inFlight.remove(url)
+                DispatchQueue.main.async {
+                    self.delegate?.imageCache(self, didFail: url, error: ImageCacheError.invalidURL)
+                }
+                return
+            }
+
+            URLSession.shared.dataTask(with: requestURL) { data, _, error in
+                // BUG 5: Delegate callbacks are fired on URLSession's background queue.
+                // UIKit mutations (stopAnimating, imageView.image) from a background
+                // thread are undefined behavior and cause visual glitches or crashes.
+                // Fix: dispatch delegate calls to main queue.
+                self.queue.async(flags: .barrier) {
+                    self.inFlight.remove(url)
+
+                    if let error = error {
+                        DispatchQueue.main.async {
+                            self.delegate?.imageCache(self, didFail: url, error: error)
+                        }
+                        return
+                    }
+
+                    guard let data = data, let image = UIImage(data: data) else { return }
+                    self.store[url] = image
+                    DispatchQueue.main.async {
+                        self.delegate?.imageCache(self, didLoad: image, for: url)
+                    }
+                }
+            }.resume()
+        }
+    }
+
+    // BUG 3 (same): clearAll mutates both collections without synchronisation.
+    func clearAll() {
+        queue.async(flags: .barrier) {
+            self.store.removeAll()
+            self.inFlight.removeAll()
+        }
+    }
+}
+
+class FeedViewController: UIViewController, ImageCacheDelegate {
+
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+
+    private let cache = ImageCache()
+    private var refreshTimer: Timer?
+
+    // BUG 6: `urls` is public. Exposing mutable state externally makes
+    // thread-safety guarantees impossible to uphold. Fix: private(set).
+    private(set) var urls: [String] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        cache.delegate = self
+        startRefreshTimer()
+    }
+
+    private func startRefreshTimer() {
+        // BUG 7: Timer closure captures `self` strongly.
+        // RunLoop retains the Timer; the closure retains FeedViewController.
+        // deinit is never reached → timer never invalidated → permanent leak.
+        // Fix: [weak self] capture list.
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+            self?.reloadAll()
+        }
+    }
+
+    private func reloadAll() {
+        for url in urls { cache.load(url: url) }
+    }
+
+    func imageCache(_ cache: ImageCache, didLoad image: UIImage, for url: String) {
+        loadingIndicator.stopAnimating()
+        imageView.image = image
+    }
+
+    func imageCache(_ cache: ImageCache, didFail url: String, error: Error) {
+        loadingIndicator.stopAnimating()
+        print("Failed: \(url) — \(error)")
+    }
+
+    deinit {
+        refreshTimer?.invalidate()
+    }
+}
 
 ~~~
 
