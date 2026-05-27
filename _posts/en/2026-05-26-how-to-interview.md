@@ -1,3 +1,10 @@
+---
+title: Interview with the Software Engineer
+date: 2026-05-26
+categories: [behavior, interview, mobile]
+tags: [softskill, interview, recruiter]
+---
+
 
 # Interview with the Software Engineer
 
