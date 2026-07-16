@@ -6,8 +6,6 @@ tags: [softskill, interview, recruiter]
 ---
 
 
-# Interview with the Software Engineer
-
 For the past 10 years, I've been interviewing people who want a job in IT. This much experience has brought me to a point where I have my own process that I believe works and can get good candidates for the job. I based my process on self-awareness and recognition of the limits of a candidate's knowledge. I decided to share it and make some clarifications about it too.
 
 # My problem with the standard interview process
@@ -110,7 +108,7 @@ The challenges should be small enough that the candidate can solve them in aroun
 
 The model of the challenge is like the one below:
 
-~~~Swift
+~~~swift
 
 import UIKit
 
@@ -204,7 +202,7 @@ What I ask of the candidate is to comment every error that was found and come up
 
 Of course, the challenge here is just an example and was AI-generated just to explain what I do. I have a library of challenges of different complexities.
 
-~~~Swift
+~~~swift
 
 import UIKit
 
