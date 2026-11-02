@@ -6,6 +6,11 @@
 - type: rss
   icon: "fas fa-rss"
   noblank: true
+
+- type: x
+  icon: "fab fa-x-twitter"
+  url: "https://x.com/VictorCruzAmaro"
+
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
