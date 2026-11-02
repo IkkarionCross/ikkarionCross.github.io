@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 4
+order: 5
 ---
 
 Hi, I’m Victor da Cruz Amaro, a proud **carioca** born and raised in Rio de Janeiro, Brazil. I wrote my first lines of code at 16 and haven’t stopped since. Solving problems is what drives me, and technology has always been my favorite tool to do it.

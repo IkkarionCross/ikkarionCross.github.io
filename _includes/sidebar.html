@@ -18,7 +18,7 @@
   </header>
   <!-- .profile-wrapper -->
 
-  <nav class="flex-column flex-grow-1 w-100 ps-0">
+  <nav class="flex-column w-100 ps-0">
     <ul class="nav">
       <!-- home -->
       <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
@@ -42,7 +42,28 @@
     </ul>
   </nav>
 
-    <div class="lang-selector-wrapper w-100">
+  {% assign newest_app = site.data.apps | first %}
+  {% if newest_app %}
+    <section class="newest-app-wrapper" aria-labelledby="newest-app-title">
+      <p class="newest-app-label" id="newest-app-title">Newest app</p>
+      <a class="newest-app-link" href="{{ '/apps/' | relative_url }}">
+        <img
+          class="newest-app-icon"
+          src="{{ newest_app.icon | relative_url }}"
+          width="44"
+          height="44"
+          alt=""
+        >
+        <span class="newest-app-copy">
+          <strong>{{ newest_app.name }}</strong>
+          <small>{{ newest_app.tagline }}</small>
+        </span>
+        <i class="fas fa-chevron-right newest-app-arrow" aria-hidden="true"></i>
+      </a>
+    </section>
+  {% endif %}
+
+    <div class="lang-selector-wrapper w-100 mt-auto">
         {%- include lang-selector.html -%}
     </div>
 

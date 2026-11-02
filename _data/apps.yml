@@ -1,0 +1,11 @@
+- name: iToth
+  tagline: Remember what you study.
+  description: Flashcards with spaced repetition, thoughtfully organized into books and chapters.
+  platforms:
+    - iPhone
+    - iPad
+    - Mac
+  icon: /assets/img/apps/itoth/icon.png
+  cover: /assets/img/apps/itoth/cover.png
+  cover_alt: iToth flashcard library and study screen shown on two iPhones
+  app_store_url: https://apps.apple.com/app/id6819675585
